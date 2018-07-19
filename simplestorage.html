@@ -58,7 +58,7 @@
 
 HTML 소스<br>
 
-<a href="https://github.com/atomrigs/atomrigs.github.io/blob/master/simplestorage.html">https://github.com/atomrigs/atomrigs.github.io/blob/master/simplestorage.html</a>;
+<a href="https://github.com/bboooooooo/bboooooooo.github.io/blob/master/simplestorage.html">https://github.com/bboooooooo/bboooooooo.github.io/blob/master/simplestorage.html</a>;
 
 <br><br>
 
@@ -81,7 +81,7 @@ HTML 소스<br>
 
 var contractAddress = '0xb85deab0ee6b1fd3cb8a33c3898fb2189d05c81d';
 
-var abi = [{"constant":false,"inputs":[{"name":"x","type":"uint256"}],"name":"set","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"get","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"}];
+var abi = [{"constant":false,"inputs":[{"name":"x","type":"string"}],"name":"set","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"get","outputs":[{"name":"","type":"string"}],"payable":false,"type":"function"}];
 var simpleStorageContract;
 var simpleStorage;
 
@@ -117,13 +117,13 @@ function startApp() {
 
 
 function getLink(addr) {
-  return '<a target="_blank" href=https://testnet.etherscan.io/address/' + addr + '>' + addr +'</a>';
+  return '<a target="_blank" href=https://ropsten.etherscan.io/tx/' + addr + '>' + addr +'</a>';
 }
 
 
 function getValue() {
   simpleStorage.get(function(e,r){
-    document.getElementById('storedData').innerHTML=r.toNumber();
+    document.getElementById('storedData').innerHTML=r;
   });
 
   web3.eth.getBlockNumber(function(e,r){
