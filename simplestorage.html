@@ -38,8 +38,10 @@
 
     <button onclick="getValue()">새로고침</button> (현재블록: <span id="lastBlock"></span>)</li>
 
-  <li><input id="newValue" type="text">
+  <li><!--<input id="newValue" type="text">-->
+    <input id="newValue" type="file">
     <button onclick="setValue()">새 값으로 저장하기</button>
+
       <div id="result"></div></li>
 
   <li>새 값을 저장한 후 팬딩 트랜잭션이 블록에 포함되면 자동으로 페이지가 업데이트될 것입니다.</li>
@@ -79,7 +81,36 @@
 
 var contractAddress = '0xb85deab0ee6b1fd3cb8a33c3898fb2189d05c81d';
 
-var abi = [{"constant":false,"inputs":[{"name":"x","type":"string"}],"name":"set","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"get","outputs":[{"name":"","type":"string"}],"payable":false,"type":"function"}];
+var abi = [
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "x",
+				"type": "bytes"
+			}
+		],
+		"name": "set",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "get",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bytes"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	}
+];
 var simpleStorageContract;
 var simpleStorage;
 
@@ -115,7 +146,7 @@ function startApp() {
 
 
 function getLink(addr) {
-  return '<a target="_blank" href=https://ropsten.etherscan.io/address/' + addr + '>' + addr +'</a>';
+  return '<a target="_blank" href=https://ropsten.etherscan.io/tx/' + addr + '>' + addr +'</a>';
 }
 
 
