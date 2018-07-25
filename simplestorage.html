@@ -79,39 +79,12 @@
 
 <script>
 
-//'0x46b85ba7a458e0142506ed295ec9811b8f5eb289';
 var contractAddress = '0xb85deab0ee6b1fd3cb8a33c3898fb2189d05c81d';
+//'0x46b85ba7a458e0142506ed295ec9811b8f5eb289';
+var abi = [{"constant":false,"inputs":[{"name":"x","type":"string"}],"name":"set","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"get","outputs":[{"name":"","type":"string"}],"payable":false,"type":"function"}];
+//[{"constant": false,"inputs": [{"name": "x","type": "bytes"}],"name": "set","outputs": [],"payable": false,"stateMutability": "nonpayable","type": "function"},{"constant": true,"inputs": [],"name": "get","outputs": [{"name": "","type": "bytes"}],"payable": false,"stateMutability": "view","type": "function"}];
 
-var abi = [
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "x",
-				"type": "bytes"
-			}
-		],
-		"name": "set",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "get",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bytes"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	}
-];
+
 var simpleStorageContract;
 var simpleStorage;
 
@@ -147,7 +120,7 @@ function startApp() {
 
 
 function getLink(addr) {
-  return '<a target="_blank" href=https://ropsten.etherscan.io/tx/' + addr + '>' + addr +'</a>';
+  return '<a target="_blank" href=https://ropsten.etherscan.io/address/' + addr + '>' + addr +'</a>';
 }
 
 
