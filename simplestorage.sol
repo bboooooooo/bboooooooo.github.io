@@ -2,13 +2,24 @@ pragma solidity ^0.4.0;
 
 contract SimpleStorage
 {
-    bytes storedData;
+    string storedData;
 
-    function set(bytes x){
+    function set(string x){
         storedData = x;
     }
 
-    function get() constant returns (bytes) {
+    function get() constant returns (string) {
         return storedData;
     }
 }
+/*
+bytes storedData;
+
+function set(bytes x){
+    storedData = x;
+}
+
+function get() constant returns (bytes) {
+    return storedData;
+}
+*/
