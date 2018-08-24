@@ -116,7 +116,6 @@ function startApp() {
   });
 
   getValue();
-  setValue();
 }
 
 
@@ -137,7 +136,7 @@ function getValue() {
 
 
 function setValue() {
-  var newValue = "/page/board/read.php?idx=500";
+  var newValue = document.getElementById('newValue').value;
   var txid;
 
   simpleStorage.set(newValue, function(e,r){
