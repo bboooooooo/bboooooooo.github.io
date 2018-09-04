@@ -126,7 +126,7 @@ function getLink(addr) {
 
 function getValue() {
   simpleStorage.get(function(e,r){
-    document.getElementById('storedData').innerHTML= '<a target="_blank" href =https://localhost'+r+'>'+r+'</a>';
+    document.getElementById('storedData').innerHTML= '<a target="_blank" href =http://localhost'+r+'>'+r+'</a>';
   });
 
   web3.eth.getBlockNumber(function(e,r){
