@@ -39,7 +39,6 @@
     <button onclick="getValue()">새로고침</button> (현재블록: <span id="lastBlock"></span>)</li>
 
   <li><input id="newValue" type="text">
-    <!--<input id="newValue" type="file">-->
     <button onclick="setValue()">새 값으로 저장하기</button>
 
       <div id="result"></div></li>
@@ -79,9 +78,42 @@
 
 <script>
 
-var contractAddress = '0xb85deab0ee6b1fd3cb8a33c3898fb2189d05c81d';
-//'0x46b85ba7a458e0142506ed295ec9811b8f5eb289';
-var abi = [{"constant":false,"inputs":[{"name":"x","type":"string"}],"name":"set","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"get","outputs":[{"name":"","type":"string"}],"payable":false,"type":"function"}];
+var contractAddress = '0xef696748d0ded073d1da4a9163ec7b949363ac6d';
+var tokenAddress = '0xef696748d0ded073d1da4a9163ec7b949363ac6d';
+var abi = [
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "get",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "x",
+				"type": "string"
+			},
+			{
+				"name": "_Address",
+				"type": "address"
+			}
+		],
+		"name": "set",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+];
 //[{"constant": false,"inputs": [{"name": "x","type": "bytes"}],"name": "set","outputs": [],"payable": false,"stateMutability": "nonpayable","type": "function"},{"constant": true,"inputs": [],"name": "get","outputs": [{"name": "","type": "bytes"}],"payable": false,"stateMutability": "view","type": "function"}];
 
 
@@ -139,7 +171,7 @@ function setValue() {
   var newValue = document.getElementById('newValue').value;
   var txid;
 
-  simpleStorage.set(newValue, function(e,r){
+  simpleStorage.set(newValue, tokenAddress, function(e,r){
     document.getElementById('result').innerHTML = 'Transaction id: ' + '<a href =https://ropsten.etherscan.io/tx/' + r + '>' + r +'</a>' + '<span id="pending" style="color:red;">(Pending)</span>';
     txid = r;
   });
