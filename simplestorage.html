@@ -78,23 +78,32 @@
 
 <script>
 
-var contractAddress = '0x24e72f5c54acc310f8abea016452246cf07ac83b';
-var tokenAddress = '0xcd0c6d235fb9618ed9477f20cb78a32c5374aec9';
+var contractAddress = '0xf3fDE26d8a3F2959b5B5BF7fC5CD866cF5cCFA76';
+var tokenAddress = '0x52c4C097CeB137cbeb878eb568f8E141A99e1dE2';
 var abi = [
 	{
 		"constant": false,
 		"inputs": [
 			{
-				"name": "",
+				"name": "x",
+				"type": "string"
+			},
+			{
+				"name": "_Address",
 				"type": "address"
+			},
+			{
+				"name": "chk",
+				"type": "uint8"
 			}
 		],
-		"name": "Write",
+		"name": "set",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function"
-	},{
+	},
+	{
 		"constant": true,
 		"inputs": [],
 		"name": "get",
@@ -106,24 +115,6 @@ var abi = [
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "x",
-				"type": "string"
-			},
-			{
-				"name": "_Address",
-				"type": "address"
-			}
-		],
-		"name": "set",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
 		"type": "function"
 	}
 ];
