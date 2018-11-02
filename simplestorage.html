@@ -78,8 +78,8 @@
 
 <script>
 
-var contractAddress = '0xf3fDE26d8a3F2959b5B5BF7fC5CD866cF5cCFA76';
-var tokenAddress = '0x52c4C097CeB137cbeb878eb568f8E141A99e1dE2';
+var contractAddress = '0x295614A10bd4d84badEEc70B30Db54bB9616f950';
+var tokenAddress = '0x157Cd87083EBe20379bC0932feb20C8caB11384c';
 var abi = [
 	{
 		"constant": false,
@@ -148,7 +148,8 @@ function startApp() {
   simpleStorage = simpleStorageContract.at(contractAddress);
   document.getElementById('contractAddr').innerHTML = getLink(contractAddress);
   web3.eth.getAccounts(function(e,r){
-    document.getElementById('accountAddr').innerHTML = getLink(r[0]);
+    //document.getElementById('accountAddr').innerHTML = getLink(r[0]);
+    document.getElementById('accountAddr').innerHTML = r[];
   });
 
   getValue();
