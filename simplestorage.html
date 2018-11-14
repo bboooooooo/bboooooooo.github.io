@@ -331,7 +331,7 @@ function startApp() {
   web3.eth.getAccounts(function(e,r){
     document.getElementById('accountAddr').innerHTML = getLink(r[0]);
     myaddr = r[0]; //
-    console.log(myaddr);
+    //console.log(myaddr);
   });
 
   getValue();
@@ -379,10 +379,10 @@ function setValue() {
 }
 
 function tokenchk() {
-
+  var r1;
   token.balanceOf(myaddr, function(e,r){
-    r = r/1000000000000000000;
-    alert("DCO토큰"+r+"개 보유");
+    r1 = r/1000000000000000000;
+    alert("DCO토큰"+r1+"개 보유");
   });
 }
 </script>
