@@ -378,6 +378,7 @@ function setValue() {
 }
 
 function tokenchk() {
+  console.log(myaddr);
   token.balanceOf(myaddr, function(e,r){
     alert("DCO토큰"+r+"개 보유");
   });
